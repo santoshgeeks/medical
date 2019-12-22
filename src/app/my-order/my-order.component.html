@@ -1,0 +1,826 @@
+<!-- Nav tabs -->
+
+
+<div class="container-fluid pt-5">
+  <div class="row py-4">
+    <div class="col-sm-3 vertical-stepper" id="navbar-example3">
+      <ul class="nav flex-column nav-pills" id="myScrollspy">
+        <li class="nav-item">
+          <a class="nav-link active" id="patientGeneral-tab" data-toggle="tab" href="#patientGeneral" role="tab"
+            aria-controls="patientGeneral" aria-selected="true">
+            Patient and General
+            <span>1</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="frameTracer-tab" data-toggle="tab" href="#frameTracer" role="tab"
+            aria-controls="frameTracer" aria-selected="false">
+            Frame
+            <span>2</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="edgerSettings-tab" data-toggle="tab" href="#edgerSettings" role="tab"
+            aria-controls="edgerSettings" aria-selected="false">
+            Edger Settings
+            <span>3</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="rxInfo-tab" data-toggle="tab" href="#rxInfo" role="tab" aria-controls="rxInfo"
+            aria-selected="false">
+            Rx
+            <span>4</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="lensSelection-tab" data-toggle="tab" href="#lensSelection" role="tab"
+            aria-controls="lensSelection" aria-selected="false">
+            Lens Selction
+            <span>5</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="review&Submit-tab" data-toggle="tab" href="#review&Submit" role="tab"
+            aria-controls="review&Submit" aria-selected="false">
+            Review & Submit
+            <span>6</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Sections -->
+    <div class="col-sm-9 scrollspy my-order-content" data-spy="scroll" data-target="#myScrollspy" data-offset="0">
+      <div class="section active" id="patientGeneral" role="tabpanel" aria-labelledby="patientGeneral-tab">
+        <h2 class="sub-heading text-center">Patient and General</h2>
+        <div class="mb-5">
+          <label class="custom-label">Job Type:</label>
+          <div class="button-row">
+            <button (click)="jobType('finished')" [class.myClass]="finished" mat-flat-button class="light-grey-bg">Finished</button>
+            <button (click)="jobType('uncut')" [class.myClass]="uncut" mat-flat-button class="light-grey-bg">Uncut</button>
+            <button (click)="jobType('both')" [class.myClass]="both" mat-flat-button class="light-grey-bg">Both</button>
+            <button (click)="jobType('onlyLeft')" [class.myClass]="onlyLeft" mat-flat-button class="light-grey-bg">Only Left</button>
+            <button (click)="jobType('onlyRight')" [class.myClass]="onlyRight" mat-flat-button class="light-grey-bg">Only Right</button>
+            <button (click)="jobType('digital')" [class.myClass]="digital" mat-flat-button class="light-grey-bg">Digital</button>
+          </div>
+        </div>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="custom-label" for="labSearch">Lab:</label>
+              <input type="search" class="form-control form-control-lg" id="labSearch">
+              <a class="input-search"><img src="../../assets/images/search.png" width="18" alt=""></a>
+              <a class="add-new"><img src="../../assets/images/plus.png" width="20" alt=""></a>
+            </div>
+            <div class="form-group col-md-2 offset-md-2">
+              <label class="custom-label" for="accountNo">Bill to Account#</label>
+              <input type="text" class="form-control form-control-lg" id="accountNo">
+            </div>
+            <div class="form-group col-md-2">
+              <label class="custom-label" for="shipTo">Ship to:</label>
+              <input type="text" class="form-control form-control-lg" id="shipTo">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="custom-label" for="patient">Patient:</label>
+              <input type="search" class="form-control form-control-lg" id="patient">
+              <a class="input-search"><img src="../../assets/images/search.png" width="18" alt=""></a>
+              <a class="add-new"><img src="../../assets/images/plus.png" width="20" alt=""></a>
+            </div>
+            <div class="form-group col-md-4 offset-md-2">
+              <label class="custom-label" for="trayNo">Tray#:</label>
+              <input type="text" class="form-control form-control-lg" id="trayNo">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="custom-label" for="po">PO:</label>
+              <input type="text" class="form-control form-control-lg" id="po">
+            </div>
+            <div class="form-group col-md-4 offset-md-2">
+              <label class="custom-label" for="enteredBy">Entered By:</label>
+              <input type="text" class="form-control form-control-lg" id="enteredBy">
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="section" id="frameTracer" role="tabpanel" aria-labelledby="frameTracer-tab">
+        <h2 class="sub-heading text-center">Frame & Tracer</h2>
+        <div class="mb-5">
+          <label class="custom-label">Frame Type:</label>
+          <div class="button-row">
+            <button mat-flat-button class="light-grey-bg">Metal</button>
+            <button mat-flat-button class="light-grey-bg">Rimeless</button>
+            <button mat-flat-button class="light-grey-bg">Plastic</button>
+            <button mat-flat-button class="light-grey-bg">Nylor</button>
+          </div>
+        </div>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="custom-label" for="selectBrand">Frame Brand:</label>
+              <select class="form-control form-control-lg custom-user-select" id="selectBrand">
+                <option>Puma</option>
+                <option>Rayben</option>
+                <option>Vincent</option>
+                <option>Crystal</option>
+              </select>
+            </div>
+            <div class="trace-item col-md-6 offset-md-1 mt-2">
+              <div class="trace-content">
+                <div class="row ml-2 mb-2">
+                  <div class="glassIcon"></div>
+                  <div class="box"></div>
+                  <div class="glassIcon iconsecond"></div>
+                </div>
+                <div class="trace-frame">Trace Frame</div>
+              </div>
+            </div>
+            <div class="form-group col-md-4">
+              <label class="custom-label" for="model">Model:</label>
+              <select class="form-control form-control-lg custom-user-select" id="model">
+                <option>Round</option>
+                <option>Square</option>
+                <option>Cat eye</option>
+                <option>Rectangle</option>
+              </select>
+            </div>
+            <div class="form-group import-frame col-md-6 offset-md-1 d-flex justify-content-center">
+              <div class="upload-btn-wrapper mt-4">
+                <span class="cusstom-import">or import file</span>
+                <input type="file" name="myfile" />
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="custom-label" for="color">Color:</label>
+              <input type="text" class="form-control form-control-lg" id="color">
+            </div>
+            <div class="form-group col offset-md-1">
+              <label class="custom-label" for="a">A:</label>
+              <input type="number" step="3" class="form-control form-control-lg" id="a">
+            </div>
+            <div class="form-group col">
+              <label class="custom-label" for="b">B:</label>
+              <input type="number" step="3" class="form-control form-control-lg" id="b">
+            </div>
+            <div class="form-group col">
+              <label class="custom-label" for="dbl">DBL:</label>
+              <input type="number" step="3" class="form-control form-control-lg" id="dbl">
+            </div>
+            <div class="form-group col">
+              <label class="custom-label" for="ed">ED:</label>
+              <input type="number" step="3" class="form-control form-control-lg" id="ed">
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="section" id="edgerSettings" role="tabpanel" aria-labelledby="edgerSettings-tab">
+        <h2 class="sub-heading text-center">EDGER SETTINGS</h2>
+        <form>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="custom-label">Safety Bevel:</label>
+              <div class="button-row">
+                <button mat-flat-button class="light-grey-bg">Finished</button>
+                <button mat-flat-button class="light-grey-bg">Uncut</button>
+              </div>
+            </div>
+            <div class="col-md-4 offset-md-1">
+              <label class="custom-label">Polish:</label>
+              <div class="button-row">
+                <button mat-flat-button class="light-grey-bg">Finished</button>
+                <button mat-flat-button class="light-grey-bg">Uncut</button>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <label class="custom-label" for="po">Bevel Type:</label>
+            </div>
+            <div class="form-group col-md-4 offset-md-1">
+              <label class="custom-label" for="bevelPosition">Bevel Position:</label>
+              <input type="text" class="form-control form-control-lg" id="bevelPosition">
+            </div>
+          </div>
+        </form>
+
+      </div>
+
+      <div class="section" id="rxInfo" role="tabpanel" aria-labelledby="rxInfo-tab">
+        <h2 class="sub-heading text-center">RX INFO</h2>
+        <form>
+          <div class="form-row mb-3">
+            <div class="col-md-4">
+              <label class="custom-label">Distance RX:</label>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-1 custom-circle"><span>
+                        R
+                      </span></div>
+                    <div class="col">
+                      <label class="custom-label light">SPHERE:</label>
+                      <input type="text" class="form-control form-control-lg" maxlength = "6" (click)="focusFunction()" (input)="arrayFor($event)" name="search" #search='ngModel' [(ngModel)]='searchlense'>
+
+                      <div class="form-popup" id="myForm" >
+                        <form action="/action_page.php" class="form-container">
+                          <div class="row">
+                            <div class="col-lg-7">
+                              <div class="row">
+                                <div class="col-sm-3">
+                                    <button (click)="number('7')" class="button button1">7</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button (click)="number('8')" class="button button1">8</button>
+                                </div>
+                                <div class="col-sm-3">
+                                    <button (click)="number('9')" class="button button1">9</button>
+                                </div>
+                                <div class="col-sm-3" style="text-align: center;">
+                                    <button (click)="number('+')" class="button button1">
+                                        <i style=" margin-top:8px" class="material-icons">
+                                            add
+                                            </i>
+                                    </button>
+                                </div>
+                              </div>
+                              <div class="row" style="margin-top: 8px; margin-bottom: 8px;">
+                                  <div class="col-sm-3">
+                                      <button (click)="number('4')" class="button button1">4</button>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      <button (click)="number('5')" class="button button1">5</button>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      <button (click)="number('6')" class="button button1">6</button>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      <button (click)="number('-')" class="button button1">
+                                        <div style="margin-top:-5px">
+                                        <i class="material-icons">
+                                          minimize
+                                          </i>
+                                        </div>
+                                      </button>
+                                  </div>
+                              </div>
+                              <div class="row" style="margin-bottom: 8px;">
+                                  <div class="col-sm-3">
+                                      <button (click)="number('1')" class="button button1">1</button>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      <button (click)="number('2')" class="button button1">2</button>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      <button (click)="number('3')" class="button button1">3</button>
+                                  </div>
+                                  <div class="col-sm-3">
+                                    <button class="button button1"> <i style="margin: 8px 0 0 -3px;" (click)="number('clear')" class="material-icons">
+                                        backspace
+                                        </i></button>
+                                         
+                                      
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-sm-3">
+                                   
+                                  </div>
+                                  <div class="col-sm-3">
+                                    <button (click)="number('0')" class="button button1">0</button>
+                                  </div>
+                                  <div class="col-sm-3">
+                                      
+                                       
+                                          <button  (click)="number('.')" class="button button1">
+                                            <i style="font-size: 7px;margin-bottom: 14px;" class="fa fa-circle" aria-hidden="true"></i>
+                                          </button>
+                                        
+                                     
+                                  </div>
+                                 
+                              </div>
+                              <div class="row" style="margin-top: 80px;">
+                                <div class="col-sm"  style="text-align: left;">
+                                  <button  class="button button1" (click)="focusOutFunction()">ok</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="vL"></div>
+                            
+                            <div style="margin-left: 38px;" class="col-lg-3">
+                                <div style="padding: 5px;" class="row" *ngFor="let lense of value">
+                                    <div class="col-sm lense" style="margin-top: 4px; margin-bottom: 5px;">
+                                      <a href="#" class="lensespan">{{lense}}</a></div>
+                                  </div>
+                            </div>
+                            
+                          </div>
+                          
+                        </form>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <label class="custom-label light">CYL:</label>
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                    <div class="col">
+                      <label class="custom-label light">AXIS:</label>
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 offset-1">
+              <label class="custom-label">Near RX:</label>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-2 custom-circle"><span>
+                        R
+                      </span></div>
+                    <div class="col-7">
+                      <label class="custom-label light">ADD:</label>
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 offset-1">
+              <label class="custom-label">Fitting Measeurements:</label>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="col-2 custom-circle"><span>
+                        R
+                      </span></div>
+                    <div class="col">
+                      <label class="custom-label light">M.PD:</label>
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                    <div class="col">
+                      <label class="custom-label light">FT HEIGHT:</label>
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-4">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="form-group col-1 custom-circle"><span class="L">
+                        L
+                      </span></div>
+                    <div class="form-group col">
+
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                    <div class="form-group col">
+
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                    <div class="form-group col">
+
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 offset-1">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="form-group col-2 custom-circle"><span class="L">
+                        L
+                      </span></div>
+                    <div class="form-group col-7">
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 offset-1">
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-row">
+                    <div class="form-group col-2 custom-circle"><span class="L">
+                        L
+                      </span></div>
+                    <div class="form-group col">
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                    <div class="form-group col">
+
+                      <input type="text" class="form-control form-control-lg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="mb-3">
+              <div class="custom-control custom-checkbox mr-sm-2">
+                <input type="checkbox" class="custom-control-input" id="Prism">
+                <label class="custom-control-label" for="Prism">Apply prism</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-md-5">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-row mb-3">
+                    <div class="col-1 custom-circle"><span>
+                        R
+                      </span></div>
+                    <div class="col-6 pr-5 pl-0">
+                      <label class="custom-label light">PRISM 1</label>
+                      <div class="d-flex">
+                        <input type="text" class="form-control form-control-lg">
+                        <div class="ml-3">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label custom-label light align-text-bottom"
+                              for="customRadio1">In</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label custom-label light align-text-bottom"
+                              for="customRadio2">Out</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <label class="custom-label light">PRISM 2</label>
+                      <div class="d-flex">
+                        <input type="text" class="form-control form-control-lg">
+                        <div class="ml-3">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label custom-label light align-text-bottom"
+                              for="customRadio3">Up</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio4" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label custom-label light align-text-bottom"
+                              for="customRadio4">Down</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-1 custom-circle"><span class="L">
+                        L
+                      </span></div>
+                    <div class="form-group col-6 pr-5 pl-0">
+                      <div class="d-flex">
+                        <input type="text" class="form-control form-control-lg">
+                        <div class="ml-3">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio5" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label custom-label light align-text-bottom"
+                              for="customRadio5">In</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio6" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label custom-label light align-text-bottom"
+                              for="customRadio6">Out</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group col-5">
+                      <div class="d-flex">
+                        <input type="text" class="form-control form-control-lg">
+                        <div class="ml-3">
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio7" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label custom-label light align-text-bottom"
+                              for="customRadio7">Up</label>
+                          </div>
+                          <div class="custom-control custom-radio">
+                            <input type="radio" id="customRadio8" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label custom-label light align-text-bottom"
+                              for="customRadio8">Down</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="section" id="lensSelection" role="tabpanel" aria-labelledby="lensSelection-tab">
+        <h2 class="sub-heading text-center">LENS SELECTION</h2>
+        <form>
+          <div class="form-row">
+            <div class="col-md-4">
+              <div class="form-group">
+                <label class="custom-label" for="lensBrand">Brand:</label>
+                <input type="search" class="form-control form-control-lg" id="lensBrand">
+                <a class="input-search"><img src="../../assets/images/search.png" width="18" alt=""></a>
+                <a class="add-new"><img src="../../assets/images/plus.png" width="20" alt=""></a>
+              </div>
+              <div class="form-group">
+                <label class="custom-label" for="lensMaterial">Material:</label>
+                <input type="search" class="form-control form-control-lg" id="lensMaterial">
+                <a class="input-search"><img src="../../assets/images/search.png" width="18" alt=""></a>
+                <a class="add-new"><img src="../../assets/images/plus.png" width="20" alt=""></a>
+              </div>
+              <div class="form-group">
+                <label class="custom-label" for="lensStyle">Style:</label>
+                <input type="search" class="form-control form-control-lg" id="lensStyle">
+                <a class="input-search"><img src="../../assets/images/search.png" width="18" alt=""></a>
+                <a class="add-new"><img src="../../assets/images/plus.png" width="20" alt=""></a>
+              </div>
+            </div>
+            <div class="col-md-4 offset-md-2">
+              <div class="form-row">
+                <div class="col pr-4">
+                  <div class="mb-4">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                      <input type="checkbox" class="custom-control-input" id="tint">
+                      <label class="custom-control-label" for="tint">Tint</label>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="custom-label" for="tintType">Type:</label>
+                    <select class="form-control form-control-lg custom-user-select" id="tintType">
+                      <option>Puma</option>
+                      <option>Rayben</option>
+                      <option>Vincent</option>
+                      <option>Crystal</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label class="custom-label" for="tintColor">Color:</label>
+                    <select class="form-control form-control-lg custom-user-select" id="tintColor">
+                      <option>Blue</option>
+                      <option>Grey</option>
+                      <option>White</option>
+                      <option>Yellow</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col pl-4">
+                  <div class="mb-4">
+                    <div class="custom-control custom-checkbox mr-sm-2">
+                      <input type="checkbox" class="custom-control-input" id="ArCoating">
+                      <label class="custom-control-label" for="ArCoating">AR Coating</label>
+                    </div>
+                  </div>
+                  <div class="mb-4">
+                    <label class="custom-label" for="ArCoatingType">Type:</label>
+                    <select class="form-control form-control-lg custom-user-select" id="ArCoatingType">
+                      <option>Puma</option>
+                      <option>Rayben</option>
+                      <option>Vincent</option>
+                      <option>Crystal</option>
+                    </select>
+                  </div>
+                  <div class="mb-4">
+                    <label class="custom-label" for="ArCoatingColor">Color:</label>
+                    <select class="form-control form-control-lg custom-user-select" id="ArCoatingColor">
+                      <option>Blue</option>
+                      <option>Grey</option>
+                      <option>White</option>
+                      <option>Yellow</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+      <div class="section" id="review&Submit" role="tabpanel" aria-labelledby="review&Submit-tab">
+        <h2 class="sub-heading text-center">ORDER REVIEW</h2>
+        <div class="row review-container mb-5">
+          <div class="col-md-3 review-side-box p-3">
+            <div class="side-content mb-3">
+              <label class="custom-label" for="ArCoatingColor">Tray Number:</label>
+              <p>791611</p>
+            </div>
+            <div class="side-content mb-3">
+              <label class="custom-label" for="ArCoatingColor">Patient Name:</label>
+              <p>Blima Rosen</p>
+            </div>
+            <div class="side-content mb-3">
+              <label class="custom-label" for="ArCoatingColor">PO:</label>
+              <p>Tivaex 4</p>
+            </div>
+            <div class="side-content mb-3">
+              <label class="custom-label" for="ArCoatingColor">Date entered:</label>
+              <p>11/10/19</p>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="row p-3">
+              <img src="../../assets/images/spec_frame.PNG" alt="frame">
+            </div>
+            <div class="row p-3">
+              <div class="side-content col-md-6">
+                <label class="custom-label" for="ArCoatingColor">Frame:</label>
+                <p>Seiko, 4654, BLK</p>
+              </div>
+              <div class="side-content col">
+                <label class="custom-label" for="ArCoatingColor">A:</label>
+                <p>48</p>
+              </div>
+              <div class="side-content col">
+                <label class="custom-label" for="ArCoatingColor">B:</label>
+                <p>30</p>
+              </div>
+              <div class="side-content col">
+                <label class="custom-label" for="ArCoatingColor">BR:</label>
+                <p>18</p>
+              </div>
+              <div class="side-content col">
+                <label class="custom-label" for="ArCoatingColor">ED:</label>
+                <p>52</p>
+              </div>
+            </div>
+            <div class="row p-3">
+              <div class="side-content col-md-7">
+                <label class="custom-label" for="ArCoatingColor">Frame:</label>
+                <p>460 Shamier - Crizal Avance</p>
+              </div>
+              <div class="side-content col">
+                <label class="custom-label" for="ArCoatingColor">TINT:</label>
+                <p>6561</p>
+              </div>
+              <div class="side-content col">
+                <label class="custom-label" for="ArCoatingColor">AR:</label>
+                <p>Crizal Blue</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row review-container-rx mb-3">
+          <div class="col-md-5">
+            <label class="custom-label">Distance:</label>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-1 custom-circle"><span>
+                      R
+                    </span></div>
+                  <div class="col">
+                    <label class="custom-label small">SPHERE:</label>
+                    <div class="custom-badge">
+                      -2.50
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="custom-label small">CYL:</label>
+                    <div class="custom-badge">
+                      0.50
+                    </div>
+                  </div>
+                  <div class="col">
+                    <label class="custom-label small">AXIS:</label>
+                    <div class="custom-badge">
+                      090
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 offset-1">
+            <label class="custom-label">Near:</label>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-2 custom-circle"><span>
+                      R
+                    </span></div>
+                  <div class="col">
+                    <label class="custom-label small">ADD:</label>
+                    <div class="custom-badge"> +2.00 </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 offset-1 pl-0">
+            <label class="custom-label">Fitting:</label>
+            <div class="row">
+              <div class="col-md-12 px-0">
+                <div class="form-row">
+                  <div class="col-2 custom-circle"><span>
+                      R
+                    </span></div>
+                  <div class="col">
+                    <label class="custom-label small">M.PD:</label>
+                    <div class="custom-badge">32</div>
+                  </div>
+                  <div class="col">
+                    <label class="custom-label small">FT HEIGHT:</label>
+                    <div class="custom-badge">18</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row review-container-rx mb-3">
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-1 custom-circle">
+                    <span class="L">
+                      L
+                    </span></div>
+                  <div class="col">
+                    <div class="custom-badge">
+                      -3.50
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="custom-badge">
+                      -1.00
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="custom-badge">
+                      135
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 offset-1">
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-row">
+                  <div class="col-2 custom-circle">
+                    <span class="L">
+                      L
+                    </span></div>
+                  <div class="col">
+                    <div class="custom-badge"> +3.00 </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 offset-1 px-0">
+            <div class="row">
+              <div class="col-md-12 pl-0">
+                <div class="form-row">
+                  <div class="col-2 custom-circle">
+                    <span class="L">
+                      L
+                    </span></div>
+                  <div class="col">
+                    <div class="custom-badge">33</div>
+                  </div>
+                  <div class="col">
+                    <div class="custom-badge">19</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row view-submit-container">
+          <div class="col-12 d-flex justify-content-end pr-0">
+              <button mat-button><i class="fa fa-file-pdf-o mr-2 align-baseline"></i>View Invoice</button>
+              <button class="mx-5" mat-button><i class="fa fa-print mr-2 align-baseline"></i>Print Order</button>
+            <button [routerLink]="['/order_confirmation']" class="submit-button px-5" mat-button>                
+                 Submit
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

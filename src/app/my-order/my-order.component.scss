@@ -1,0 +1,421 @@
+.light-grey-bg {
+    background-color: #E4E4E4;
+}
+
+.custom-label {
+    font-weight: 500;
+    font-size: 14px;
+
+    &.light {
+        font-size: 12px;
+        color: #8C8C8C;
+    }
+}
+
+.input-search {
+    position: absolute;
+    top: 42px;
+    left: 23px;
+    cursor: pointer;
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+input {
+    &:focus~.input-search {
+        opacity: 0;
+    }
+
+    ~.add-new {
+        position: absolute;
+        top: 42px;
+        right: -35px;
+        cursor: pointer;
+    }
+}
+
+select {
+    -webkit-appearance: none;
+}
+
+.custom-user-select {
+    background-image: url(../../assets/images/downwards-pointer.png);
+    background-position: calc(100% - 14px) calc(1em + -3px), calc(100% - 15px) calc(1em + 2px), calc(100% - .7em) .5em;
+    background-size: 15px 14px, 4px 1px, 4.5em 5.5em;
+    background-repeat: no-repeat;
+}
+
+.custom-checkbox .custom-control-label {
+    font-weight: 500;
+    padding-left: 3px;
+
+    &::before {
+        border-radius: 0;
+        font-weight: 500;
+    }
+}
+
+.custom-radio {
+    .custom-control-label {
+        &::before {
+            position: absolute;
+            top: 0rem;
+        }
+
+        &::after {
+            position: absolute;
+            top: 0rem;
+        }
+    }
+}
+
+.submit-button {
+    background: #0038FF !important;
+    border-radius: 30px !important;
+    color: white !important;
+}
+
+.vertical-stepper {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        position: fixed;
+        top: 85px;
+        width: 235px;
+        left: 50px;
+        border-right: 1px solid #808080;
+
+        &>li {
+            display: block;
+            position: relative;
+            height: 55px;
+            z-index: 0;
+
+            &:last-child>a:before {
+                display: none;
+            }
+
+            a {
+                color: #000;
+
+                &.active {
+                    color: #0038FF;
+                    background-color: transparent;
+                    border-right: 7px solid #0038FF;
+                    border-radius: 0px;
+                    margin-right: -4px;
+                }
+
+                span {
+                    position: absolute;
+                    left: -17px;
+                    top: 9px;
+                    color: #fff;
+                    z-index: 9;
+                    font-size: 14px;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    width: 1px;
+                    height: 34px;
+                    border: 0.5px solid #bdc2ce;
+                    left: -14px;
+                    top: 32px;
+                    z-index: 3;
+                }
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    border: 1px solid #bdc2ce;
+                    border-radius: 50%;
+                    top: 6px;
+                    left: -26px;
+                    width: 26px;
+                    height: 26px;
+                    background-color: #808080;
+                }
+            }
+
+        }
+    }
+}
+
+.scrollspy .section {
+    min-height: 50vh;
+    margin-bottom: 100px;
+}
+
+.my-order-content {
+    padding-right: 68px;
+
+    .form-group {
+        margin-bottom: 5rem;
+        position: relative;
+    }
+
+    .sub-heading {
+        font-weight: 900;
+        font-size: 25px;
+        padding-right: 70px;
+        margin-bottom: 25px;
+    }
+
+    .button-row {
+        button {
+            margin-right: 12px;
+            min-width: 130px;
+            padding: 3px 16px;
+        }
+    }
+
+    .trace-item {
+        width: 100%;
+        height: 150px;
+        border: 1px dashed #0038ff;
+        border-radius: 6px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .box {
+            width: 21px;
+            height: 9px;
+            border: solid 1px #C4C4C4;
+            border-color: #C4C4C4 transparent transparent transparent;
+            border-radius: 549%/100px 100px 0 0;
+            margin-top: 1px;
+        }
+
+        .glassIcon {
+            border: 1px solid #C4C4C4;
+            height: 27px;
+            width: 27px;
+            border-radius: 50%;
+            background-color: #C4C4C4;
+            margin-right: -5px;
+        }
+
+        .iconsecond {
+            margin-left: -5px;
+        }
+
+        .trace-content {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .trace-frame {
+                font-weight: 400;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .custom-circle {
+        span {
+            position: absolute;
+            border: 1px solid #e4e4e4;
+            border-radius: 50%;
+            top: 41px;
+            left: 0px;
+            width: 26px;
+            height: 26px;
+            text-align: center;
+            background-color: #e4e4e4;
+            font-weight: normal;
+            font-size: 14px;
+            padding-top: 2.3px;
+
+            &.L {
+                top: 10px;
+            }
+        }
+    }
+
+    .review-container {
+        .custom-label {
+            font-weight: 400;
+            font-size: 12px;
+            margin-bottom: 0;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .review-side-box {
+            background: #F4F4F4;
+            border-radius: 5px;
+
+            .side-content {
+                border-bottom: 1px solid #00000017;
+            }
+        }
+    }
+
+    .review-container-rx {
+        .custom-label {
+            font-size: 18px;
+
+            &.small {
+                font-size: 12px;
+            }
+        }
+
+        .custom-circle span {
+            border: 0px solid #e4e4e4;
+            font-weight: 600;
+            font-size: 18px;
+            background-color: transparent;
+        }
+
+        .custom-badge {
+            padding: 12px 15px;
+            background: #f4f4f4;
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+
+    .view-submit-container {
+        margin-top: 90px;
+    }
+
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    span {
+        color: #0038ff;
+        background-color: white;
+        border-radius: 8px;
+        text-decoration: underline;
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    input[type=file] {
+        // font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+}
+
+.lense {
+    background: #EEEEEE;
+    border-radius: 63.6287px;
+    font-family: Acumin Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 27.5724px;
+    line-height: 33px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #484848;
+}
+
+.lense span {
+    font-family: Acumin Pro;
+    font-size: 20.5724px;
+    line-height: 33px;
+    color: #484848;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: absolute;
+    bottom: 5;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    width: 347px;
+    height: 334px;
+    left: 4px;
+    background: #FFFFFF;
+    border-radius: 9px;
+}
+
+.button:hover {
+    color: white;
+    background-color: #0038FF;
+}
+
+.button {
+    background-color: #F1F1F1;
+    border: none;
+    color: black;
+    height: 40px;
+    width: 40px;
+    font-family: Acumin Pro;
+    font-size: 21.5625px;
+}
+
+.vL {
+    border: 1px solid #F1F1F1;
+    height: 275px;
+    position: absolute;
+    left: 66%;
+    margin-left: -3px;
+    top: 20px;
+}
+
+#myForm:focus {
+    display: block;
+}
+
+.lense:hover {
+    color: white;
+    background-color: #0038FF;
+}
+
+.lensespan {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.lensespan:hover {
+    color: white !important;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.button1 {
+    border-radius: 22px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    padding: 10px;
+    background-color: white;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+.myClass{
+    background-color: white;
+    border: solid;
+    border-color: blue;
+    color: blue;
+    border-radius: 5px;
+  }

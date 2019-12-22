@@ -1,0 +1,110 @@
+::ng-deep.mat-form-field-appearance-outline .mat-form-field-infix {
+    padding:4px 0px 10px 0px;
+}
+mat-toolbar{
+  background: #FFFFFF;
+box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.04);
+}
+.fabButton{
+  z-index:5; position : fixed;display : flex; 
+align-self : flex-end;bottom : 10%; margin-bottom : 68px; float: right;
+}
+.buttonFab{
+  background: #0038FF!important;
+
+}
+.newButton{
+  background: #0038FF!important;
+    border-radius: 30px!important;
+    color: white!important;
+    margin-left: 10px!important;
+    margin-right: 10px!important;
+}
+.box{
+  width: 21px;
+  height: 9px;
+  border: solid 1px #C4C4C4;
+  border-color: #C4C4C4 transparent transparent transparent;
+  border-radius: 549%/100px 100px 0 0;
+  margin-top: 1px;
+}
+.glassIcon{
+  border: 1px solid #C4C4C4;
+  height: 20px;
+   width: 20px;
+   border-radius: 12px;
+   background-color: #C4C4C4;
+   margin-right: -5px;
+}
+.iconsecond{
+  margin-left: -5px;
+}
+.status{
+    /* font-family: Acumin Pro; */
+    font-style: normal;
+    font-weight: bold;
+    /* font-size: 14px; */
+    /* line-height: 17px; */
+    display: flex;
+    align-items: center;
+    text-align: right;
+    text-transform: uppercase;
+
+
+}
+.thStyle{
+  font-weight: 300;
+    padding: 31px 0px 4px 16px!important;
+}
+.thme{
+  font-style: normal;
+  font-weight: 300;
+  // font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #000000;
+}
+tbody tr{
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+background: #FFFFFF;
+box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.09);
+border-radius: 5px;
+
+}
+td {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+table { 
+  border-collapse: separate; 
+  border-spacing: 0 10px; 
+  margin-top: -10px; /* correct offset on first border spacing if desired */
+}
+td {
+  border: solid 1px white;
+  border-style: solid none;
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+td:first-child {
+  border-left-style: solid;
+  border-top-left-radius: 10px; 
+  border-bottom-left-radius: 10px;
+}
+td:last-child {
+  border-right-style: solid;
+  border-bottom-right-radius: 10px; 
+  border-top-right-radius: 10px; 
+}
+
+table td, .table th {
+    padding: 1rem;
+    vertical-align: top;
+}
+.orderList{
+  font-weight: 500;
+}
